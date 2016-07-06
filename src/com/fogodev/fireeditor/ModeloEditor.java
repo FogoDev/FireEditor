@@ -35,22 +35,47 @@ public class ModeloEditor {
     }
     
     public void retangulo() {
+        this.modo.abortar();
         trocaModo(new ModoRetangulo(this));
     }
     
     public void mover() {
+        this.modo.abortar();
         trocaModo(new ModoMover(this));
     }
     
     public void circulo() {
+        this.modo.abortar();
         trocaModo(new ModoCirculo(this));
     }
 
     public void apagar()
     {
+        this.modo.abortar();
         trocaModo(new ModoApagar(this));
     }
-    
+
+    public void triangle()
+    {
+        this.modo.abortar();
+        trocaModo(new TriangleMode1(this));
+    }
+
+    public void triangle1()
+    {
+        trocaModo(new TriangleMode1(this));
+    }
+
+    public void triangle2(Dot dot)
+    {
+        trocaModo(new TriangleMode2(this, dot));
+    }
+
+    public void triangle3(Dot dot1, Dot dot2)
+    {
+        trocaModo(new TriangleMode3(this, dot1, dot2));
+    }
+
     public void desfazer() {
         if(!feitos.isEmpty()) {
             Comando c = feitos.pop();

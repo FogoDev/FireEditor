@@ -35,8 +35,14 @@ public class ModoApagar implements ModoEditor
     @Override
     public void fim(int x, int y)
     {
-        model.figuras.remove(this.figure);
-        model.feitos.push(new ComandoApagar(this.figure));
+        this.model.figuras.remove(this.figure);
+        this.model.feitos.push(new ComandoApagar(this.figure));
+    }
+
+    @Override
+    public void abortar()
+    {
+
     }
 
     @Override

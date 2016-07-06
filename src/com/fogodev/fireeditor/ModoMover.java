@@ -36,7 +36,13 @@ public class ModoMover implements ModoEditor {
         }
         modelo.mover(); // ou fig = null;
     }
-    
+
+    @Override
+    public void abortar()
+    {
+
+    }
+
     public String tag() { return "mov"; }
 
 }

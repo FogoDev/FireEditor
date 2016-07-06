@@ -23,5 +23,11 @@ public class ModoCirculo implements ModoEditor {
         modelo.circulo();
     }
 
+    @Override
+    public void abortar()
+    {
+
+    }
+
     public String tag() { return "circ"; }
 }

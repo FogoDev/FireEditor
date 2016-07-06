@@ -23,7 +23,13 @@ public class ModoRetangulo implements ModoEditor {
         modelo.feitos.push(new ComandoFigura(ret));
         modelo.retangulo();
     }
-    
+
+    @Override
+    public void abortar()
+    {
+
+    }
+
     public String tag() { return "ret"; }
 }
 

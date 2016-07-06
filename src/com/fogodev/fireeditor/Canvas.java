@@ -40,5 +40,9 @@ public class Canvas extends Componente {
     public void circulo(int cx, int cy, int raio, Cor cor) {
         tela.circulo(cx + this.x + 5, cy + this.y + 5, raio, cor);
     }
-    
+
+    public void triangle(int x1, int y1, int x2, int y2, int x3, int y3, Cor cor)
+    {
+        tela.triangulo(x1 + this.x + 5, y1 + this.y + 5, x2 + this.x + 5, y2 + this.y + 5, x3 + this.x + 5, y3 + this.y + 5, cor);
+    }
 }
