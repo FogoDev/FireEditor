@@ -5,14 +5,13 @@ package com.fogodev.fireeditor;
  *
  * https://github.com/fogodev
  */
-public class ModoApagar implements ModoEditor
+public class ModoApagar extends ModoEditor
 {
-    private ModeloEditor model;
     private Figura figure;
 
     public ModoApagar(ModeloEditor model)
     {
-        this.model = model;
+        super(model);
     }
 
     @Override
@@ -37,12 +36,6 @@ public class ModoApagar implements ModoEditor
     {
         this.model.figuras.remove(this.figure);
         this.model.feitos.push(new ComandoApagar(this.figure));
-    }
-
-    @Override
-    public void abortar()
-    {
-
     }
 
     @Override

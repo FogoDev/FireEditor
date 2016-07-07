@@ -5,14 +5,12 @@ package com.fogodev.fireeditor;
  *
  * https://github.com/fogodev
  */
-abstract public class TriangleMode implements ModoEditor
+abstract public class TriangleMode extends ModoEditor
 {
 
-    protected ModeloEditor model;
-
-    public TriangleMode(ModeloEditor model)
+    protected TriangleMode(ModeloEditor model)
     {
-        this.model = model;
+        super(model);
     }
 
     @Override
@@ -23,12 +21,6 @@ abstract public class TriangleMode implements ModoEditor
 
     @Override
     public void meio(int x, int y)
-    {
-
-    }
-
-    @Override
-    public void abortar()
     {
 
     }
