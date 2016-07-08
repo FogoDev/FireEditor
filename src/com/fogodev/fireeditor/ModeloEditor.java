@@ -95,4 +95,19 @@ public class ModeloEditor {
     public String modo() {
         return modo.tag();
     }
+
+    public void changeRedColor(double red)
+    {
+        this.r = red;
+    }
+
+    public void changeGreenColor(double green)
+    {
+        this.g = green;
+    }
+
+    public void changeBlueColor(double blue)
+    {
+        this.b = blue;
+    }
 }
