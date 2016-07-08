@@ -4,4 +4,6 @@ public interface Figura {
     boolean dentro(int x, int y);
     void mover(int dx, int dy);
     void desenhar(ModeloCanvas c);
+    void changeColor(double [] newColors);
+    double [] getColor();
 }

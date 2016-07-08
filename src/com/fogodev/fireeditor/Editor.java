@@ -10,7 +10,7 @@ public class Editor extends AbstractApp {
         componentes.add(new BotaoOnOff(50, 130, 200, 50, "Retangulo", Cor.BRANCO, Cor.PRETO, modelo::retangulo, this::isModoRetangulo));
         componentes.add(new BotaoOnOff(50, 220, 200, 50, "Circulo", Cor.BRANCO, Cor.PRETO, modelo::circulo, this::isModoCirculo));
         componentes.add(new BotaoOnOff(50, 310, 200, 50, "Triângulo", Cor.BRANCO, Cor.PRETO, modelo::triangle, this::isModoTriangle));
-        componentes.add(new BotaoOnOff(50, 400, 200, 50, "Troca cor", Cor.BRANCO, Cor.PRETO, modelo::apagar, this::isModoApagar));
+        componentes.add(new BotaoOnOff(50, 400, 200, 50, "Troca cor", Cor.BRANCO, Cor.PRETO, modelo::changeColor, this::isModoChangeColor));
         componentes.add(new BotaoOnOff(50, 490, 200, 50, "Apagar", Cor.BRANCO, Cor.PRETO, modelo::apagar, this::isModoApagar));
         componentes.add(new Botao(50, 580, 200, 50, "Desfazer", Cor.BRANCO, Cor.PRETO, modelo::desfazer));
         componentes.add(new Botao(50, 670, 200, 50, "Refazer", Cor.BRANCO, Cor.PRETO, modelo::refazer));
@@ -85,6 +85,11 @@ public class Editor extends AbstractApp {
     public boolean isModoTriangle()
     {
         return modelo.modo().equals("tri");
+    }
+
+    public boolean isModoChangeColor()
+    {
+        return modelo.modo().equals("change");
     }
     
     public static void main(String[] args) {

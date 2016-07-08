@@ -13,4 +13,16 @@ public abstract class AbstractFigura implements Figura {
         x = x + dx;
         y = y + dy;
     }
+
+    public void changeColor(double [] newColors)
+    {
+        this.r = newColors[0];
+        this.g = newColors[1];
+        this.b = newColors[2];
+    }
+
+    public double [] getColor()
+    {
+        return new double [] {this.r, this.g, this.b};
+    }
 }

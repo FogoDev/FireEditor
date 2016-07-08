@@ -49,6 +49,12 @@ public class ModeloEditor {
         trocaModo(new ModoCirculo(this));
     }
 
+    public void changeColor()
+    {
+        this.modo.abortar();
+        trocaModo(new ChangeColorMode(this));
+    }
+
     public void apagar()
     {
         this.modo.abortar();
