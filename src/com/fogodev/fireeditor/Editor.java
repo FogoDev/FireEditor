@@ -6,16 +6,36 @@ public class Editor extends AbstractApp {
     public Editor() {
         super("Editor", 1024, 768);
         modelo = new ModeloEditor();
-        componentes.add(new BotaoOnOff(50, 50, 200, 50, "Mover", Cor.BRANCO, Cor.PRETO, modelo::mover, this::isModoMover));
-        componentes.add(new BotaoOnOff(50, 150, 200, 50, "Retangulo", Cor.BRANCO, Cor.PRETO, modelo::retangulo, this::isModoRetangulo));
-        componentes.add(new BotaoOnOff(50, 250, 200, 50, "Circulo", Cor.BRANCO, Cor.PRETO, modelo::circulo, this::isModoCirculo));
-        componentes.add(new BotaoOnOff(50, 350, 200, 50, "Triângulo", Cor.BRANCO, Cor.PRETO, modelo::triangle, this::isModoTriangle));
-        componentes.add(new BotaoOnOff(50, 450, 200, 50, "Apagar", Cor.BRANCO, Cor.PRETO, modelo::apagar, this::isModoApagar));
-        componentes.add(new Botao(50, 550, 200, 50, "Desfazer", Cor.BRANCO, Cor.PRETO, modelo::desfazer));
-        componentes.add(new Botao(50, 650, 200, 50, "Refazer", Cor.BRANCO, Cor.PRETO, modelo::refazer));
+        componentes.add(new BotaoOnOff(50, 40, 200, 50, "Mover", Cor.BRANCO, Cor.PRETO, modelo::mover, this::isModoMover));
+        componentes.add(new BotaoOnOff(50, 130, 200, 50, "Retangulo", Cor.BRANCO, Cor.PRETO, modelo::retangulo, this::isModoRetangulo));
+        componentes.add(new BotaoOnOff(50, 220, 200, 50, "Circulo", Cor.BRANCO, Cor.PRETO, modelo::circulo, this::isModoCirculo));
+        componentes.add(new BotaoOnOff(50, 310, 200, 50, "Triângulo", Cor.BRANCO, Cor.PRETO, modelo::triangle, this::isModoTriangle));
+        componentes.add(new BotaoOnOff(50, 400, 200, 50, "Troca cor", Cor.BRANCO, Cor.PRETO, modelo::apagar, this::isModoApagar));
+        componentes.add(new BotaoOnOff(50, 490, 200, 50, "Apagar", Cor.BRANCO, Cor.PRETO, modelo::apagar, this::isModoApagar));
+        componentes.add(new Botao(50, 580, 200, 50, "Desfazer", Cor.BRANCO, Cor.PRETO, modelo::desfazer));
+        componentes.add(new Botao(50, 670, 200, 50, "Refazer", Cor.BRANCO, Cor.PRETO, modelo::refazer));
         componentes.add(new Slider(920,550, 20, Cor.VERMELHO, Cor.rgb(0.5, 0, 0), modelo::changeRedColor, 0 ));
         componentes.add(new Slider(955,550, 20, Cor.VERDE, Cor.rgb(0, 0.5, 0), modelo::changeGreenColor, 0 ));
         componentes.add(new Slider(990,550, 20, Cor.AZUL, Cor.rgb(0, 0, 0.5), modelo::changeBlueColor, 1 ));
+        componentes.add(new CaixaCor(920, 670, 90, 70, new CorCaixa() {
+            @Override
+            public double getR()
+            {
+                return modelo.r;
+            }
+
+            @Override
+            public double getG()
+            {
+                return modelo.g;
+            }
+
+            @Override
+            public double getB()
+            {
+                return modelo.b;
+            }
+        }));
         componentes.add(new Canvas(300, 0, 600, 768, Cor.PRETO, Cor.BRANCO, new ObservadorCanvas() {
             public void desenhar(Canvas c) {
                 for(Figura f: modelo.figuras) {
